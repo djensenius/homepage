@@ -8,6 +8,7 @@
             href: http://server.local:8099/admin
             icon: pi-hole.svg
             description: Pi-hole dashboard
+            ping: 192.168.1.87
             widget:
               type: pihole
               url: http://192.168.1.87:8099
@@ -17,6 +18,7 @@
             href: https://unifi.ui.com/
             icon: unifi.svg
             description: FluxHaus Network
+            ping: 192.168.1.1
             widget:
               type: unifi
               url: https://192.168.1.1
@@ -25,6 +27,7 @@
             href: http://truenas.local
             icon: truenas.svg
             description: TrueNAS
+            ping: 192.168.1.205
             widget:
               type: truenas
               url: http://192.168.1.205
@@ -35,6 +38,7 @@
             href: http://server.local:9000
             icon: portainer.svg
             description: Portainer Docker Info
+            ping: portainer
             widget:
               type: portainer
               url: http://192.168.1.87:9000
@@ -44,6 +48,7 @@
             href: https://login.tailscale.com/admin/machines
             icon: tailscale.svg
             description: Tailscale connection
+            ping: tailscale.com
             widget:
               type: tailscale
               deviceid: nWmpd7hbnx11CNTRL
@@ -51,6 +56,7 @@
         - Homebridge:
             href: http://server.local:8581/
             icon: homebridge.svg
+            ping: 192.168.1.87
             descirption: Homebridge Accessories
             widget:
               type: homebridge
@@ -62,6 +68,7 @@
             href: https://app.plex.tv/
             description: Local Streaming Service
             icon: plex.svg
+            ping: 192.168.1.205
             widget:
               type: plex
               url: http://192.168.1.205:32400
@@ -70,6 +77,7 @@
             href: https://komga.fluxhaus.io
             description: Comics
             icon: komga.svg
+            ping: komga.fluxhaus.io
             widget:
               type: komga
               key: {{HOMEPAGE_VAR_KOMGA_TOKEN}}
@@ -79,6 +87,7 @@
             href: https://audiobookshelf.fluxhaus.io
             description: Audio Books
             icon: audiobookshelf.svg
+            ping: audiobookshelf
             widget:
               type: audiobookshelf
               url: http://192.168.1.87:13378
@@ -88,6 +97,7 @@
             href: https://localhost
             description: Watchtower Docker Monitor
             icon: watchtower.svg
+            ping: watchtower
             widget:
               type: watchtower
               url: http://192.168.1.87:8089
@@ -96,6 +106,7 @@
             href: https://radarr.fluxhaus.io
             description: Radarr Service
             icon: radarr.svg
+            ping: radarr
             widget:
               type: radarr
               url: http://192.168.1.87:7878
@@ -104,6 +115,7 @@
             href: https://sonarr.fluxhaus.io
             description: Sonarr Service
             icon: sonarr.svg
+            ping: sonarr
             widget:
               type: sonarr
               url: http://192.168.1.87:8989
@@ -112,6 +124,7 @@
             href: https://readarr.fluxhaus.io
             description: Readarr Service
             icon: readarr.svg
+            ping: readarr
             widget:
               type: readarr
               url: http://192.168.1.87:8787
@@ -120,6 +133,7 @@
             href: http://server.local:8090/home
             description: Mylar3 Comic Service
             icon: mylar.png
+            ping: mylar3
             widget:
               type: mylar
               url: http://192.168.1.87:8090
@@ -128,6 +142,7 @@
             href: http://server.local:8081/sabnzbd/
             description: Newsreader downloader
             icon: sabnzbd.svg
+            ping: sabnzbd
             widget:
               type: sabnzbd
               url: http://192.168.1.87:8081
@@ -136,6 +151,7 @@
             href: http://server.local:8082/
             description: Bittorrent
             icon: qbittorrent.svg
+            ping: qbittorrent
             widget:
               type: qbittorrent
               url: http://192.168.1.87:8082
@@ -145,6 +161,7 @@
             href: http://server.local:9696
             description: Index Manager
             icon: prowlarr.svg
+            ping: prowlarr
             widget:
               type: prowlarr
               url: http://192.168.1.87:9696
