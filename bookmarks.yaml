@@ -1,0 +1,14 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- My Developer Things:
+    - DotFiles:
+        - abbr: .
+          href: https://github.com/djensenius/dotfiles
+          icon: github.svg
+- Bookmarks:
+    - Github:
+        - abbr: GH
+          href: https://github.com/
+          icon: github.svg

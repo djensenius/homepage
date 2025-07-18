@@ -1,0 +1,270 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Group A:
+    - Network:
+        - Pi-hole:
+            href: http://server.local:8099/admin
+            icon: pi-hole.svg
+            description: Pi-hole dashboard
+            widget:
+                type: pihole
+                url: http://192.168.1.87:8099
+                version: 6
+                key: {{HOMEPAGE_VAR_PIHOLE_API_KEY}}
+        - UniFi:
+            href: https://unifi.ui.com/
+            icon: unifi.svg
+            description: FluxHaus Network
+            widget:
+                type: unifi
+                url: https://192.168.1.1
+                key: {{HOMEPAGE_VAR_UNIFI_KEY}}
+        - TrueNAS:
+            href: http://truenas.local
+            icon: truenas.svg
+            description: TrueNAS
+            widget:
+                type: truenas
+                url: http://192.168.1.205
+                key: {{HOMEPAGE_VAR_TRUENAS_KEY}}
+                enablePools: true
+                nasType: scale
+        - Portainer:
+            href: http://server.local:9000
+            icon: portainer.svg
+            description: Portainer Docker Info
+            widget:
+                type: portainer
+                url: http://192.168.1.87:9000
+                env: 3
+                key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
+        - Tailscale:
+            href: https://login.tailscale.com/admin/machines
+            icon: tailscale.svg
+            description: Tailscale connection
+            widget:
+                type: tailscale
+                deviceid: nWmpd7hbnx11CNTRL
+                key: {{HOMEPAGE_VAR_TAILSCALE_KEY}}
+        - Homebridge:
+            href: http://server.local:8581/
+            icon: homebridge.svg
+            descirption: Homebridge Accessories
+            widget:
+                type: homebridge
+                url: http://192.168.1.87:8581
+                username: {{HOMEPAGE_VAR_HOMEBRIDGE_USER}}
+                password: {{HOMEPAGE_VAR_HOMEBRIDGE_PASSWORD}}
+    - Media:
+        - Plex:
+            href: https://app.plex.tv/
+            description: Local Streaming Service
+            icon: plex.svg
+            widget:
+                type: plex
+                url: http://192.168.1.205:32400
+                key: {{HOMEPAGE_VAR_PLEX_TOKEN}} # see https://www.plexopedia.com/plex-media-server/general/plex-token/
+        - Komga:
+            href: https://komga.fluxhaus.io
+            description: Comics
+            icon: komga.svg
+            widget:
+                type: komga
+                key: {{HOMEPAGE_VAR_KOMGA_TOKEN}}
+                version: 2
+                url: http://192.168.1.87:8080
+        - AudioBookShelf:
+            href: https://audiobookshelf.fluxhaus.io
+            description: Audio Books
+            icon: audiobookshelf.svg
+            widget:
+                type: audiobookshelf
+                url: http://192.168.1.87:13378
+                key: {{HOMEPAGE_VAR_AUDIOBOOKSHELF_KEY}}
+    - Other Containers:
+        - Watchtower:
+            href: https://localhost
+            description: Watchtower Docker Monitor
+            icon: watchtower.svg
+            widget:
+                type: watchtower
+                url: http://192.168.1.87:8089
+                key: {{HOMEPAGE_VAR_WATCHTOWER_KEY}}
+        - Radarr:
+            href: https://radarr.fluxhaus.io
+            description: Radarr Service
+            icon: radarr.svg
+            widget:
+                type: radarr
+                url: http://192.168.1.87:7878
+                key: {{HOMEPAGE_VAR_RADARR_TOKEN}}
+        - Sonarr:
+            href: https://sonarr.fluxhaus.io
+            description: Sonarr Service
+            icon: sonarr.svg
+            widget:
+                type: sonarr
+                url: http://192.168.1.87:8989
+                key: {{HOMEPAGE_VAR_SONARR_TOKEN}}
+        - Readarr:
+            href: https://readarr.fluxhaus.io
+            description: Readarr Service
+            icon: readarr.svg
+            widget:
+                type: readarr
+                url: http://192.168.1.87:8787
+                key: {{HOMEPAGE_VAR_READARR_TOKEN}}
+        - Mylar:
+            href: http://server.local:8090/home
+            description: Mylar3 Comic Service
+            icon: mylar.png
+            widget:
+                type: mylar
+                url: http://192.168.1.87:8090
+                key: {{HOMEPAGE_VAR_MYLAR3_KEY}}
+        - SABnzbd:
+            href: http://server.local:8081/sabnzbd/
+            description: Newsreader downloader
+            icon: sabnzbd.svg
+            widget:
+                type: sabnzbd
+                url: http://192.168.1.87:8081
+                key: {{HOMEPAGE_VAR_SABNZB_KEY}}
+        - qBittorrent:
+            href: http://server.local:8082/
+            description: Bittorrent
+            icon: qbittorrent.svg
+            widget:
+                type: qbittorrent
+                url: http://192.168.1.87:8082
+                username: {{HOMEPAGE_VAR_QBITTORRENT_USER}}
+                password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
+        - Prowlarr:
+            href: http://server.local:9696
+            description: Index Manager
+            icon: prowlarr.svg
+            widget:
+                type: prowlarr
+                url: http://192.168.1.87:9696
+                key: {{HOMEPAGE_VAR_PROWLARR_KEY}}
+- Group B:
+    - Server:
+        - Info:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: info
+        - CPU Usage:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: cpu
+        - Network Usage:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: network:enp3s0
+        - Top Processes:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: process
+        - Memory:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: memory
+        - Sensor:
+             widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: sensor:Composite
+    - Disk Usage:
+        - / Usage:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: fs:/
+        - / IO:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: disk:nvme0n1p2
+        - /mnt/media Usage:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: fs:/mnt/media
+        - /mnt/media IO:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: disk:nvme1n1p1
+        - /mnt/spinning Usage:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: fs:/mnt/spinning
+        - /mnt/spinning IO:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: disk:sda1
+        - /mnt/plates Usage:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: fs:/mnt/plates
+        - /mnt/plates IO:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.87:61208
+                metric: disk:sdb1
+- Group C:
+    - NAS:
+        - Info:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.205:30015
+                metric: info
+        - CPU Usage:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.205:30015
+                metric: cpu
+        - Network Usage:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.205:30015
+                metric: network:eth0
+        - Memory:
+            widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.205:30015
+                metric: memory
+        - Sensor:
+             widget:
+                type: glances
+                version: 4
+                url: http://192.168.1.205:30015
+                metric: sensor:Composite
