@@ -8,27 +8,27 @@ providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
 layout:
-    Group A:
-        style: row
-        columns: 3
-        header: false
-        Network:
-        Media:
-        Other Containers:
-    Group B:
-        style: row
-        header: false
-        Server:
-            style: row
-            columns: 3
-        Disk Usage:
-            style: row
-            columns: 4
-    Group C:
-        header: false
-        NAS:
-            style: row
-            columns: 3
-        Disk Usage:
-            style: row
-            columns: 4
+  Group A:
+    style: row
+    columns: 3
+    header: false
+    Network:
+    Media:
+    Other Containers:
+  Group B:
+    style: row
+    header: false
+    Server:
+      style: row
+      columns: 3
+    Disk Usage:
+      style: row
+      columns: 4
+  Group C:
+    header: false
+    NAS:
+      style: row
+      columns: 3
+    Disk Usage:
+      style: row
+      columns: 4
