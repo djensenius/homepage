@@ -64,7 +64,7 @@
               username: {{HOMEPAGE_VAR_HOMEBRIDGE_USER}}
               password: {{HOMEPAGE_VAR_HOMEBRIDGE_PASSWORD}}
         - UPS:
-            href: http://server.local:8085
+            href: http://server.local:8085/device/ups
             icon: peanut.svg
             ping: 192.168.1.87
             widget:
@@ -72,7 +72,7 @@
               url: http://192.168.1.87:8085
               key: ups
         - Grafana:
-            href: http://192.168.1.87:3000/
+            href: http://server.local:3000/dashboards
             icon: grafana.svg
             ping: 192.168.1.87
             widget:
