@@ -51,7 +51,7 @@
             ping: tailscale.com
             widget:
               type: tailscale
-              deviceid: nGzDWU2hyt11CNTRL
+              deviceid: nBVqesqFps11CNTRL
               key: {{HOMEPAGE_VAR_TAILSCALE_KEY}}
         - Homebridge:
             href: http://server.local:8581/
