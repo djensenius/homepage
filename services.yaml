@@ -44,15 +44,6 @@
               url: http://192.168.1.87:9000
               env: 3
               key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
-        - Tailscale:
-            href: https://login.tailscale.com/admin/machines
-            icon: tailscale.svg
-            description: Tailscale connection
-            ping: tailscale.com
-            widget:
-              type: tailscale
-              deviceid: nGzDWU2hyt11CNTRL
-              key: {{HOMEPAGE_VAR_TAILSCALE_KEY}}
         - Homebridge:
             href: http://server.local:8581/
             icon: homebridge.svg
@@ -63,14 +54,22 @@
               url: http://192.168.1.87:8581
               username: {{HOMEPAGE_VAR_HOMEBRIDGE_USER}}
               password: {{HOMEPAGE_VAR_HOMEBRIDGE_PASSWORD}}
-        - UPS:
+        - Server UPS:
             href: http://server.local:8085/device/ups
             icon: peanut.svg
             ping: 192.168.1.87
             widget:
               type: peanut
               url: http://192.168.1.87:8085
-              key: ups
+              key: servers
+        - Media UPS:
+            href: http://server.local:8085/device/ups
+            icon: peanut.svg
+            ping: 192.168.1.87
+            widget:
+              type: peanut
+              url: http://192.168.1.87:8085
+              key: media
         - Grafana:
             href: http://server.local:3000/dashboards
             icon: grafana.svg
@@ -117,15 +116,6 @@
               url: http://192.168.1.87:13378
               key: {{HOMEPAGE_VAR_AUDIOBOOKSHELF_KEY}}
     - Other Containers:
-        - Watchtower:
-            href: https://localhost
-            description: Watchtower Docker Monitor
-            icon: watchtower.svg
-            ping: watchtower
-            widget:
-              type: watchtower
-              url: http://192.168.1.87:8089
-              key: {{HOMEPAGE_VAR_WATCHTOWER_KEY}}
         - Radarr:
             href: https://radarr.fluxhaus.io
             description: Radarr Service
@@ -144,15 +134,6 @@
               type: sonarr
               url: http://192.168.1.87:8989
               key: {{HOMEPAGE_VAR_SONARR_TOKEN}}
-        - Readarr:
-            href: https://readarr.fluxhaus.io
-            description: Readarr Service
-            icon: readarr.svg
-            ping: readarr
-            widget:
-              type: readarr
-              url: http://192.168.1.87:8787
-              key: {{HOMEPAGE_VAR_READARR_TOKEN}}
         - Mylar:
             href: http://server.local:8090/home
             description: Mylar3 Comic Service
@@ -240,7 +221,7 @@
               type: glances
               version: 4
               url: http://192.168.1.87:61208
-              metric: disk:nvme0n1p2
+              metric: disk:nvme1n1p2
         - /mnt/media Usage:
             widget:
               type: glances
