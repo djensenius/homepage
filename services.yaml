@@ -86,6 +86,15 @@
             widget:
               type: prometheus
               url: http://192.168.1.87:9090
+        - Home Assistant:
+            href: http://server.local:8123
+            icon: home-assistant.svg
+            description: Home Automation
+            ping: 192.168.1.87
+            widget:
+              type: homeassistant
+              url: http://192.168.1.87:8123
+              key: {{HOMEPAGE_VAR_HOMEASSISTANT_KEY}}
     - Media:
         - Plex:
             href: https://app.plex.tv/
@@ -115,6 +124,20 @@
               type: audiobookshelf
               url: http://192.168.1.87:13378
               key: {{HOMEPAGE_VAR_AUDIOBOOKSHELF_KEY}}
+        - Overseerr:
+            href: http://server.local:5055
+            description: Media Requests
+            icon: overseerr.svg
+            ping: overseerr
+            widget:
+              type: overseerr
+              url: http://192.168.1.87:5055
+              key: {{HOMEPAGE_VAR_OVERSEERR_KEY}}
+        - ROMm:
+            href: http://192.168.1.87:6086
+            description: ROM Manager
+            icon: romm.png
+            ping: romm
     - Other Containers:
         - Radarr:
             href: https://radarr.fluxhaus.io
@@ -171,6 +194,15 @@
               type: prowlarr
               url: http://192.168.1.87:9696
               key: {{HOMEPAGE_VAR_PROWLARR_KEY}}
+        - Bazarr:
+            href: http://server.local:6767
+            description: Subtitle Manager
+            icon: bazarr.svg
+            ping: bazarr
+            widget:
+              type: bazarr
+              url: http://192.168.1.87:6767
+              key: {{HOMEPAGE_VAR_BAZARR_KEY}}
 - Group B:
     - Server:
         - Info:
@@ -234,30 +266,12 @@
               version: 4
               url: http://192.168.1.87:61208
               metric: disk:nvme1n1p1
-        - /mnt/spinning Usage:
+        - /mnt/smb/SpinningPlates Usage:
             widget:
               type: glances
               version: 4
               url: http://192.168.1.87:61208
-              metric: fs:/mnt/spinning
-        - /mnt/spinning IO:
-            widget:
-              type: glances
-              version: 4
-              url: http://192.168.1.87:61208
-              metric: disk:sda1
-        - /mnt/plates Usage:
-            widget:
-              type: glances
-              version: 4
-              url: http://192.168.1.87:61208
-              metric: fs:/mnt/plates
-        - /mnt/plates IO:
-            widget:
-              type: glances
-              version: 4
-              url: http://192.168.1.87:61208
-              metric: disk:sdb1
+              metric: fs:/mnt/smb/SpinningPlates
 - Group C:
     - NAS:
         - Info:

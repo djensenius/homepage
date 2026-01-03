@@ -28,5 +28,4 @@
     disk:
       - /
       - /mnt/media
-      - /mnt/spinning
-      - /mnt/plates
+      - /mnt/smb/SpinningPlates
