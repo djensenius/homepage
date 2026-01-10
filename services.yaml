@@ -5,7 +5,7 @@
 - Group A:
     - Network:
         - Pi-hole:
-            href: http://server.local:8099/admin
+            href: http://server.lan:8099/admin
             icon: pi-hole.svg
             description: Pi-hole dashboard
             ping: 192.168.1.87
@@ -35,7 +35,7 @@
               enablePools: true
               nasType: scale
         - Portainer:
-            href: http://server.local:9000
+            href: http://server.lan:9000
             icon: portainer.svg
             description: Portainer Docker Info
             ping: portainer
@@ -45,7 +45,7 @@
               env: 3
               key: {{HOMEPAGE_VAR_PORTAINER_KEY}}
         - Homebridge:
-            href: http://server.local:8581/
+            href: http://server.lan:8581/
             icon: homebridge.svg
             ping: 192.168.1.87
             descirption: Homebridge Accessories
@@ -55,7 +55,7 @@
               username: {{HOMEPAGE_VAR_HOMEBRIDGE_USER}}
               password: {{HOMEPAGE_VAR_HOMEBRIDGE_PASSWORD}}
         - Server UPS:
-            href: http://server.local:8085/device/ups
+            href: http://server.lan:8085/device/ups
             icon: peanut.svg
             ping: 192.168.1.87
             widget:
@@ -63,7 +63,7 @@
               url: http://192.168.1.87:8085
               key: servers
         - Media UPS:
-            href: http://server.local:8085/device/ups
+            href: http://server.lan:8085/device/ups
             icon: peanut.svg
             ping: 192.168.1.87
             widget:
@@ -71,7 +71,7 @@
               url: http://192.168.1.87:8085
               key: media
         - Grafana:
-            href: http://server.local:3000/dashboards
+            href: http://server.lan:3000/dashboards
             icon: grafana.svg
             ping: 192.168.1.87
             widget:
@@ -87,7 +87,7 @@
               type: prometheus
               url: http://192.168.1.87:9090
         - Home Assistant:
-            href: http://server.local:8123
+            href: http://server.lan:8123
             icon: home-assistant.svg
             description: Home Automation
             ping: 192.168.1.87
@@ -125,7 +125,7 @@
               url: http://192.168.1.87:13378
               key: {{HOMEPAGE_VAR_AUDIOBOOKSHELF_KEY}}
         - Overseerr:
-            href: http://server.local:5055
+            href: http://server.lan:5055
             description: Media Requests
             icon: overseerr.svg
             ping: overseerr
@@ -133,11 +133,33 @@
               type: overseerr
               url: http://192.168.1.87:5055
               key: {{HOMEPAGE_VAR_OVERSEERR_KEY}}
+        - Immich:
+            href: https://immich.fluxhaus.io
+            description: Photo Backup Service
+            icon: immich.svg
+            ping: 192.168.1.205
+            widget:
+              type: immich
+              url: http://192.168.1.205:30041
+              key: {{HOMEPAGE_VAR_IMMICH_KEY}}
+              version: 2 # optional, default is 1
+        - Forgejo:
+            href: https://code.fluxhaus.io
+            description: Git Repositories
+            icon: forgejo.svg
+            ping: 192.168.1.205
+            widget:
+              type: gitea
+              url: http://192.168.1.205:30142
+              key: {{HOMEPAGE_VAR_CODE_KEY}}
         - ROMm:
-            href: http://192.168.1.87:6086
+            href: http://server.lan:6086
             description: ROM Manager
             icon: romm.png
-            ping: romm
+            ping: http://server.lan:6086
+            widget:
+              type: romm
+              url: http://192.168.1.87:6086
     - Other Containers:
         - Radarr:
             href: https://radarr.fluxhaus.io
@@ -158,7 +180,7 @@
               url: http://192.168.1.87:8989
               key: {{HOMEPAGE_VAR_SONARR_TOKEN}}
         - Mylar:
-            href: http://server.local:8090/home
+            href: http://server.lan:8090/home
             description: Mylar3 Comic Service
             icon: mylar.png
             ping: mylar3
@@ -167,7 +189,7 @@
               url: http://192.168.1.87:8090
               key: {{HOMEPAGE_VAR_MYLAR3_KEY}}
         - SABnzbd:
-            href: http://server.local:8081/sabnzbd/
+            href: http://server.lan:8081/sabnzbd/
             description: Newsreader downloader
             icon: sabnzbd.svg
             ping: sabnzbd
@@ -176,17 +198,17 @@
               url: http://192.168.1.87:8081
               key: {{HOMEPAGE_VAR_SABNZB_KEY}}
         - qBittorrent:
-            href: http://server.local:8082/
+            href: https://server.lan:8082/
             description: Bittorrent
             icon: qbittorrent.svg
             ping: qbittorrent
             widget:
               type: qbittorrent
-              url: http://192.168.1.87:8082
+              url: https://192.168.1.87:8082
               username: {{HOMEPAGE_VAR_QBITTORRENT_USER}}
               password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
         - Prowlarr:
-            href: http://server.local:9696
+            href: http://server.lan:9696
             description: Index Manager
             icon: prowlarr.svg
             ping: prowlarr
@@ -195,7 +217,7 @@
               url: http://192.168.1.87:9696
               key: {{HOMEPAGE_VAR_PROWLARR_KEY}}
         - Bazarr:
-            href: http://server.local:6767
+            href: http://server.lan:6767
             description: Subtitle Manager
             icon: bazarr.svg
             ping: bazarr
